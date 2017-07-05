@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*header*/
+.margin{width:1240px;margin: 0 auto;}
+.header{position: relative;
+width: 100%;
+z-index: 998;
+height: 80px;
+background-color: #fff;
+border-bottom: 1px solid #efefef;}
+.header .header-a{}
+/*logo*/
+.header .header-a .a-logo{float: left;}
+.header .header-a .a-logo a{display: block;overflow: hidden;height: 32px;margin-top: 25px;}
+/*logo-zi*/
+.header .header-a .logo-z{float: left;margin-left: 30px;line-height: 80px;}
+.header .header-a .logo-z li{float: left;font-size: 14px;}
+.header .header-a .logo-z li a{color: #999;}
+ .header .header-a .logo-z li i{margin: 0 10px;color: #999;}
+.header .header-a .logo-z .li-1{float: left;font-size: 14px;}
+.header .header-a .logo-z .li-1 a{color: #333;}
+.header .header-a .logo-z .li-1:hover a{color: red;}
+.header .header-a .logo-y{float: right;height: 40px;font-size: 12px;
+line-height: 40px;margin-top: 20px;}
+.header .header-a .logo-y li{float: left;padding: 0 20px;}
+.header .header-a .logo-y li:hover a{color: #00c3f5;}
+/*section*/
+.sec-t{background-color: #F5F5F5;}
+.sec-t .section-1{}
+.sec-t .section-1 .table-1{height: 50px;background-color: #fff;
+color: #333;border-bottom: 1px solid #EFEFEF;}
+.sec-t .section-1 .table-1 .table-td{width: 220px;text-align: left;padding-left: 45px;}
+.sec-t .section-1 .table-1 .table-td .td-1{display: inline-block;color: #333;line-height: 0;}
+
+.sec-t .section-1 .table-1 .table-td .td-1 .td-11{display: inline-block;margin-right: 10px;
+width: 17px;height: 17px;border: 1px solid #BDBDBD;border-radius: 2px;
+background-color: #fff;text-align: center;font-size: 10px;line-height: 17px;}
+
+.sec-t .section-1 .table-1 .table-td .td-1 .td-span{display:inline-block;}
+
+.sec-t .section-1 .table-1 .td-22{width: 270px;text-align: left;}
+.sec-t .section-1 .table-1 .td-33{width: 220px;text-align: center;}
+.sec-t .section-1 .table-1 .td-44{width: 200px;text-align: center;}
+.sec-t .section-1 .table-1 .td-55{width: 160px;text-align: center;}
+.sec-t .section-1 .table-1 .td-66{width: 110px;text-align: right;padding-right: 40px;}
+
+
+
+
+
+
+
+
+
+
+
