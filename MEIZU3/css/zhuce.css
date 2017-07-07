@@ -1,0 +1,88 @@
+.margin{margin:0 auto;width:1228px;}
+header{height:40px;background-color:#666666;font:12px/40px "";color:#cccccc;}
+.header_l{float:left;height:40px;}
+.header_l li{float:left;margin-right:43px;}
+.header_l a{color:#cccccc;}
+.header_l a:hover{color:#fff;}
+.header_l li:last-child{position:relative;}
+.header_l .code{position:absolute;width:180px;height: 200px;background-color: #fff;border: 1px solid #ccc;text-align: center;z-index: 99;left: -30px;display:none;} 
+.header_l .code p{font-size:10px;}
+.header_l .code img{width:140px;height:140px;}
+.header_l li:last-child:hover .code{display:block;}
+
+.header_r{float:right;height:40px;}
+.header_r p{float:left;}
+.header_r p a{color:#CCCCCC;}
+.header_r p a:hover{color:#fff;}
+.header_r span{float:left;margin:0 15px;}
+
+#content{background:#f0f0f0;width:100%;padding:64px 0 54px 0;}
+#content a{display:block;width:80px;height:48px;margin:0 auto;}
+#content a img{width:80px;height:48px;margin:0 auto;}
+#content p{font:24px/68px "";color:#666;text-align: center;}
+
+#main{background:#fff;}
+#main #table{font:12px/62px "";width:442px;margin:20px auto 0 auto;}
+#main #table #username,#passWord,#passWord1{width:442px;border:1px solid #999;margin:0 auto;}
+#main #table #username span{display: inline-block;height:62px;width:66px;}
+#main #table #username span img{width:18px;height:18px;margin:0 25px;}
+#main #table #username input{border:none;width:350px;}
+
+#main #table #passWord span{display: inline-block;height:62px;width:66px;}
+#main #table #passWord span img{width:18px;height:18px;margin:0 25px;}
+#main #table #passWord input{border:none;width:350px;}
+
+#main #table #passWord1 span{display: inline-block;height:62px;width:66px;}
+#main #table #passWord1 span img{width:18px;height:18px;margin:0 25px;}
+#main #table #passWord1 input{border:none;width:350px;}
+#main #table i{display: block;height: 30px;font:12px/30px "";color:red;}
+#main #table #mima{width:442px;border:1px solid #999;margin:0 auto;}
+#main #table #mima span{display: inline-block;height:62px;width:66px;}
+#main #table #mima span img{width:18px;height:18px;margin:0 25px;}
+#main #table #mima input{border:none;width:270px;}
+#main #table #mima #sp1{font:20px/60px "";}
+#main #table #btn1{width:442px;border:1px solid #999;margin:50px auto;background:#12BDF5;text-align: center;}
+#main #table #btn1 input{border: none;background:#12BDF5;font:18px/62px "";color:#fff;}
+#main #table p{height:14px;font-size:14px;color:#666;}
+
+
+
+
+#help{background:#f0f0f0;}
+#help .margin{border-top:1px solid #e0e0e0;padding:30px 0 50px 0;position:relative;}
+#help ul{}
+#help ul li{float:left;margin-right:112px;}
+#help ul li h5{font:700 12px/36px "";color:#333;}
+#help ul li a{display:block;font:12px/26px "";color:#999;}
+#help ul li:last-child img{height:120px;width:120px;}
+#help ul li a:hover{color:#12BDF5;}
+#help .help_r{position:absolute;right:0;top:42px;text-align:center;}
+#help .help_r .tel{font-size:16px;font-weight:700;color:#ff0000;}
+#help .help_r .wenzi{font:12px/28px "";color:#999;}
+#help .help_r a{display:block;height:34px;width:158px;border:1px solid #12BDF5;font:12px/34px "";color:#ff0000;}
+#help .help_r a img{border-radius: 50%;}
+#help .help_r a:hover{background:#12BDF5;color:#fff;}
+
+
+footer{background:#e3e3e3;font:12px/24px "";color:#666666;padding:24px 0 26px 0;}
+footer .footer_l{float:left;}
+footer .footer_l .footer_t a{display:inline-block;font:12px/24px "";color:#666666;}
+footer .footer_l .footer_t span{margin:0 16px;}
+footer .footer_l .footer_b{font:12px/22px "";color:#999;}
+footer .footer_l .footer_b a{color:#999;}
+footer .footer_r{float:right;}
+footer .footer_r .language{display:inline-block;margin-right:22px;}
+footer .footer_r .language a{font:12px/36px "";color:#555;}
+footer .footer_r .language span{margin:0 12px;}
+footer .footer_r .credibility{display:inline-block;}
+
+
+
+#right{width:35px;position:fixed;right:30px;bottom:150px;text-align:center;display:none;}
+#right p{width:35px;height:35px;background:#fff;margin:15px 0;margin-bottom:2px;}
+#right p:hover{}
+#right p a img{margin:0 auto;width:16px;height:16px;border-radius:50%;vertical-align:middle;}
+#right p a i{vertical-align:middle; width:0; height:100%; display:inline-block;}
+#right span{display:inline-block;width:35px;height:30px;background:#fff;font:30px/35px "";color:#9f9f9f;line-height:35px;padding-top:5px;}
+#right span a{color:#9f9f9f;}
+#right span:hover a{color:red;}
