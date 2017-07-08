@@ -1,4 +1,3 @@
-/*
 window.onload=function() {
 	var ul = document.getElementById("ul");
 	
@@ -23,7 +22,7 @@ window.onload=function() {
 	}
 
 }
-*/
+/*
 window.onload=function(){
 	//根据序号切换选项卡，序号会传给data参数
 	function xuanze(data){
@@ -44,3 +43,4 @@ window.onload=function(){
 	}
 
 }
+*/

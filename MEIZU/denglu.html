@@ -43,6 +43,7 @@
 		    <img src="images/denglu.png" class="lunb"/>
 			<div id="table">
 				<div id="username">
+					<!--登录-->
 					<span><img src="images/cl2.png" /> </span>
 					<input id="user" type="text" placeholder="邮箱/手机号码/Flyme账号"/>
 				</div>
@@ -52,7 +53,7 @@
 					<input id="psw" type="password" placeholder="密码"/>
 				</div>
 				<i id="psw1"></i>
-				<div id="btn1" ><a href="#"><input type="button" value="立即登录"/></a></div>
+				<div id="btn1" ><a href="#"><input id="button12" value="立即登录"/></a></div>
 				<div class="main3">
 					<a href="#">注册Flyme账号</a>
 					<span>|</span>
@@ -105,3 +106,23 @@
 		</aside>
 	</body>
 </html>
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+$("#button12").click(function(){
+	$.ajax({
+		url:"dengluSave.php",
+		async:true,
+		data:"userName="+$('#userId').val()+"&userPass="+$("#passId").val(),
+		type:"post",
+		success:function(data){
+			if(data=="1"){
+				//保存cookie
+				location.href="index.html";
+			}else{
+				$("#errmsg").html("亲，用户名或者密码错误，登录失败，请想好再输！");
+			}
+		}		
+	});	
+});

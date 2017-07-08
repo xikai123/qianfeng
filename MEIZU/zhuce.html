@@ -4,8 +4,7 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/register.css"/>
-		<script type="text/javascript" src="js/register.js"/></script>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
 	</head>
 	<body>
 		<header>
@@ -20,12 +19,12 @@
 					<li><a href="#">关注微信公众号</a>
 						<div class="code">
 							<p>扫一扫，关注最新资讯！</p>
-							<img src="images/li-hr.jpg"/>
+							<img src="images/app.png" />
 						</div>
 					</li>
 				</ul>
 				<div class="header_r clear">
-					<p><a href="#">购物车</a></p>
+					<p><a href="shoppingCar.html">购物车</a></p>
 					<span>|</span>
 					<p><a href="zhuce.html">注册</a></p>
 					<span>|</span>
@@ -36,28 +35,37 @@
 
 		<section id="content">
 			<a href="#"><img src="images/logo1.png"/> </a>
-			<p>	Flyme账号注册</p>
+			<p>Flyme账号注册</p>
 		</section>
 		
 		<section id="main">
-		    <img src="images/denglu.png" class="lunb"/>
-			<div id="table">
+			<form id="table" action="zhuceSave.php" method="post">
 				<div id="username">
-					<span><img src="images/cl.png" /> </span>
-					<input id="mail" type="text" placeholder="邮箱/手机号码"/>
+					<span><img src="images/row7.png"/> </span>
+					<input id="mail" name="username" type="text" placeholder="邮箱/手机号码" required="required"/>
 				</div>
 				<i id="mail1"></i>
+				<div id="passWord">
+					<span><img src="images/r7.png"/> </span>
+					<input id="pass" name="userPass" type="text" placeholder="请输入6-12位的字母、数字组合密码" required="required"/>
+				</div>
+				<i id="pass1"></i>
+				<div id="passWord1">
+					<span><img src="images/r7.png"/> </span>
+					<input id="passCheck" type="text" placeholder="请再次输入密码" required="required"/>
+				</div>
+				<i id="passCheck1"></i>
 				<div id="mima">
-					<span><img src="images/cl2.png" /></span>
-					<input  id="yan" type="text" placeholder="输入验证码"/>
-					<s id="sp1">获取验证码</s>
+					<span><img src="images/row4.png"/></span>
+					<input  id="yan" class="userCode" type="text" placeholder="输入图片验证码" required="required"/>
+					<s id="sp1">验证码</s>
 				</div>
 				<i id="yan1"></i>
 				<p> 
 					<input type="checkbox" checked/>已阅读并同意用户服务条款和隐私政策
 				</p>
-				<div id="btn1" ><input type="button" value="立即注册"/></div>
-			</div>
+				<div><input id="btn1" type="submit" value="立即注册"/></div>
+			</form>
 		</section>
 		
 		
@@ -82,7 +90,7 @@
 					</li>
 					<li>
 						<h5>客户服务</h5>
-						<a href="#">内购平台</a>
+						<a href="#" class="red">内购平台</a>
 						<a href="#">大宗采购</a>
 						<a href="#">经销商之家</a>
 						<a href="#">十分到家</a>
@@ -100,15 +108,15 @@
 						<a href="#">金融</a>
 						<a href="#">教育</a>
 						<a href="#">全球播</a>
-						<a href="#">智能首选</a>
+						<a href="#">智能操控</a>
 					</li>
 					<li>
 						<h5>官方微商城</h5>
-						<img src="images/sc.png"/> 
+						<img src="images/li-hr.jpg"/> 
 					</li>
 				</ul>
 				<div class="help_r">
-					<p class="tel">4008-999999</p>
+					<p class="tel">4008-789456</p>
 					<p class="wenzi">（24小时在线，仅收市话费）</p>
 					<a href="#">
 						<img src="images/ico_qq.jpg"/>
@@ -136,7 +144,7 @@
 						<a href="#">成员网站</a>
 					</div>
 					<div class="footer_b">
-						<p>&copy;2010-2016 Flyme CORPPRATION All Rights Reserved.TCL集团股份有限公司版权所有 奥ICP备05040863号 <a href="#">使用条款</a>|<a href="#">法律声明</a>|<a href="#">隐私保护</a></p>	
+						<p>&copy;2010-2016 魅族 CORPPRATION All Rights Reserved.魅族集团股份有限公司版权所有 奥ICP备05040863号 <a href="#">使用条款</a>|<a href="#">法律声明</a>|<a href="#">隐私保护</a></p>	
 					</div>
 				</div>
 				<div class="footer_r">
@@ -146,7 +154,7 @@
 						<a href="#">English</a>
 					</div>
 					<div class="credibility">
-						<img src="images/index2.png"/> 
+						<img src="images/lei8.png"/> 
 					</div>
 				</div>
 			</div>
@@ -156,10 +164,11 @@
 		
 		<!--右侧边栏-->
 		<aside id="right">
-			<p><a href="#"><img src="images/cl5.png"/><i></i></a></p>
-			<span id="toTop"><a href="#">^</a></span>
+			<p><a href="#"><img src="images/index22.png"/><i></i></a></p>
+			<span id="toTop"><a href="javascript:;">^</a></span>
 		</aside>
 	</body>
-
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/zhuce.js"/></script>
 
