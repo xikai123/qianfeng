@@ -38,7 +38,8 @@ header{height:40px;background-color:#666666;font:12px/40px "";color:#cccccc;}
 #main #table #mima span img{width:18px;height:18px;margin:0 25px;}
 #main #table #mima input{border:none;width:350px;background:none;}
 #main #table #btn1{width:442px;border:1px solid #999;margin:0 auto;background:blue;text-align: center;opacity:0.5;}
-#main #table #btn1 input{border: none;background:blue;opacity:0.5;font:18px/62px "";color:#fff;}
+#main #table #btn1 input{border: none;background:blue;opacity:0.5;font:18px/62px "";color:#fff;
+text-align: center;}
 #main #table .main3{font:14px/20px "";color:#555;margin-top:35px;text-align:center;}
 #main #table .main3 a{display:inline-block;color:#555;}
 #main #table .main3 span{margin:0 70px;font-size:20px;color:#999;}

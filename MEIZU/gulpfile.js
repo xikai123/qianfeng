@@ -4,6 +4,17 @@ gulp.task("copy-html",function(){
 	gulp.src("*.html")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test"))
 })
+gulp.task("copy-js",function(){
+	gulp.src("*.js")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test"))
+})
+gulp.task("copy-json",function(){
+	gulp.src("*.json")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test"))
+})
+
+
+
 gulp.task("copy-css",function(){
 	gulp.src("css/*.css")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test/css/"))
@@ -12,6 +23,20 @@ gulp.task("images",function(){
 	gulp.src("images/*.{jpg,png,gif}")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test/images/"))
 })
+
+gulp.task("images",function(){
+	gulp.src("images/cont")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test/images/"))
+})
+gulp.task("images",function(){
+	gulp.src("images/liebiaoimg")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test/images/"))
+})
+gulp.task("images",function(){
+	gulp.src("images/xiangqingimages")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test/images/"))
+})
+
 gulp.task("html",function(){
 	gulp.src("html/*.html")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test/html/"))

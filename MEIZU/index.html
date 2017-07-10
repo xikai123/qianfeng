@@ -176,9 +176,11 @@
            <a href="#" class="b-2"><img src="images/gwc.png"/>0</a>
               <div class="che">
                   <img src="images/che.png" class="immm"/>
+                  <div  id="denglu">
                   登陆后可显示
                   <br/>
                   您账号中已加入商品哦
+                  </div>
               </div>
              </div>
         </div>
@@ -279,7 +281,7 @@
 <div class="index-phone">
    <ul class="clear">
       <li>
-         <a href="#">
+         <a href="shangpinxiangqing.html">
             <img src="images/p1.png" class="after">
             <img src="images/p2.png" class="before">
             <span class="phone-info">
@@ -819,6 +821,7 @@
 
 </body>
 </html>
+<script type="text/javascript" src="js/cookieTools1702.js" ></script>
 <script type="text/javascript">
 //滚动条事件
 	window.onscroll = function(){
@@ -831,5 +834,14 @@
 		
 		
 	}
+	//登录显示
+jQuery(function(){
+	var strN =  getCookie("userName");
+	if(strN==""){
+		jQuery("#denglu").text("亲，请登陆");
+	}else{
+		jQuery("#denglu").text("欢迎您：用户"+strN);
+	}
+});
 
 </script>

@@ -1,0 +1,48 @@
+@charset "utf-8";
+.margin{width:1240px;margin:0 auto;}
+/*头部*/
+.banner{width: 100%;height: 82px;background: red;}
+.banner .banner-r{height: 82px;background: yellow;}
+.banner .banner-r img{float: left; padding: 30px 0;}
+.banner .banner-r .banner-ul{float: right;overflow: hidden;}
+.banner .banner-r .banner-ul li{display: inline;float: left;}
+.banner .banner-r .banner-ul li a{display: block;padding: 31px 20px 30px;
+line-height: 21px;transition: color .1s linear;}
+.banner .banner-r .banner-ul li a:hover{color: #31a5e7;/*text-decoration: none;*/}
+
+/*大logo*/
+.logo{width: 100%;background: #f7f7f7;}
+.logo .logotu{height: 446px;display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,7 +20,7 @@
 					<li><a href="#">关注微信公众号</a>
 						<div class="code">
 							<p>扫一扫，关注最新资讯！</p>
-							<img src="img/code.jpg" />
+							<img src="images/weixin.png" />
 						</div>
 					</li>
 				</ul>
@@ -109,6 +109,7 @@
 
 
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/cookieTools1702.js]"></script>
 <script type="text/javascript">
 $("#button12").click(function(){
 	$.ajax({
@@ -119,6 +120,7 @@ $("#button12").click(function(){
 		success:function(data){
 			if(data=="1"){
 				//保存cookie
+				 //saveCookie("userName",jQuery("#userId").val(),7);		
 				location.href="index.html";
 			}else{
 				$("#errmsg").html("亲，用户名或者密码错误，登录失败，请想好再输！");
@@ -126,3 +128,66 @@ $("#button12").click(function(){
 		}		
 	});	
 });
+
+//window.onload=function(){
+	//写入cookie;
+	document.getElementById("button12").onclick=function(){
+		var userName=document.getElementById("user").value;
+	    var pas=document.getElementById("psw").value;
+		var date=new Date;//创建日期
+		date.setDate(date.getDate()+7);//设置日期为7天后
+		//登录时将用户名和密码写入cookie （写ccokie）
+		//写入时控制过期时间为7天后用expires=date.toGMTString()
+		document.cookie="userName="+userName+"; expires="+date.toGMTString();
+		document.cookie="pas="+pas+"; expires="+date.toGMTString();
+	};
+	var arr=document.cookie.split("; ");//将字符串拆分成数组
+	var userName,pas;
+	for(var i in arr){//userName=liu
+		var item=arr[i].split("=");
+		if(item[0]=="userName"){//找到了素组第一个
+			userName=item[1];
+		}
+		if(item[0]=="pas"){
+			pas=item[1];
+		}
+		if(userName && pas){
+//			window.location.href="index.html";
+		}
+	
+	};
+//};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

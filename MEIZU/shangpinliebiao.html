@@ -6,7 +6,7 @@
 		<link href="css/public.css" rel="stylesheet" type="text/css">
 		<link href="css/liebiao.css" rel="stylesheet" type="text/css">
 	    <script type="text/javascript" src="js/xuanxiangka.js"></script>
-	    
+	    <script type="text/javascript" src="js/cookieTools1702.js" ></script>
 	</head>
 	<body>
 	<!--顶部-->
@@ -459,7 +459,7 @@
     		</section>
     		<!--11111-->
     		<section class="gooods-list margin">
-    			<ul class="gooods-list-wrap clear">
+    			<ul class="gooods-list-wrap clear" id="mains">
     				<!--<li class="gl-item">
 
     						<div class="gl-item-wrap">
@@ -1015,7 +1015,7 @@
     				<div class="hui" style="overflow: hidden;position: relative;">
     					<ul>
     						<li class="tu1">
-    							<a href="#" class="wrap">
+    							<a href="shangpinxiangqing.html" class="wrap">
     								<div>
     									<img src="images/Ci.jpg" style="width:180px;height:180px;display:inline;"/>
     								</div>
@@ -1246,6 +1246,7 @@
 	</body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+
 <script type="text/javascript">
 //滚动条事件
 	window.onscroll = function(){
@@ -1265,18 +1266,97 @@ $(function(){
 		success:function(data){
 		var obj=eval(data);
 		for(i=0;i<16;i++){
-			let goodsId=obj[i].goodsId;
-			let goodsPrice=obj[i].goodsPrice;
-			let goodsImg=obj[i].goodsImg;
-			let goodsDesc=obj[i].goodsDesc;
-			let str="<li class='gl-item'><div class='gl-item-wrap'><div class='mod-pic' id='box'><img src='images/bb22.jpg' id='bb1' style='display:inline;width:220px;height:220px;'/><img src='images/bb1.jpg' id='bb2' style='display:inline;width:220px;height:220px;'/><img src='images/bb33.jpg' id='bb3' style='display:inline;width:220px;height:220px;'/></div><div class='itme-slide'><dl id='ul' style='display:block;width:150px;left:25px;'><dd><img src='images/bb2.jpg' style='display:inline;width:40px;height:40px;'/></dd><dd><img src='images/bb3.jpg' style='display:inline;width:40px;height:40px;'/></dd><dd class='active'><img src='images/bb4.jpg' style='display:inline;width:40px;height:40px;'/></dd></dl></div><h2>魅蓝 E2</h2><h3 class='red'>64G黑色预售，其余版本现货 购机享6期免息</h3><dd class='mod-price'><span>￥</span><span class='vm-price'>1299</span><span class='vm-start'>起</span></dd></div></li>";
+			let goodsId=obj[i].goodsId;//编号
+			let goodsName=obj[i].goodsName;//名称
+			let goodsType=obj[i].goodsType;//类型
+			let goodsPrice=obj[i].goodsPrice;//价格
+			let goodsCount=obj[i].goodsCount;//数量
+			let goodsImg=obj[i].goodsImg;//图片
+			let goodsDesc=obj[i].goodsDesc;//描述
+			let beiyong1=obj[i].beiyong1;//备用
+			let beiyong2=obj[i].beiyong2;//备用
+			let beiyong3=obj[i].beiyong3;//备用
+			let beiyong4=obj[i].beiyong4;//备用
+			let beiyong5=obj[i].beiyong5;//备用
+			
+			let str="<li ord='"+goodsId+"' class='gl-item'><div class='gl-item-wrap'><div class='mod-pic' id='box'><img src='"+goodsImg+"' id='bb1' style='display:inline;width:220px;height:220px;'/><img src='"+beiyong1+"' id='bb2' style='display:inline;width:220px;height:220px;'/><img src='"+beiyong2+"' id='bb3' style='display:inline;width:220px;height:220px;'/></div><div class='itme-slide'><dl id='ul' style='display:block;width:150px;left:25px;'><dd><img src='"+beiyong3+"' style='display:inline;width:40px;height:40px;'/></dd><dd><img src='"+beiyong4+"' style='display:inline;width:40px;height:40px;'/></dd><dd class='active'><img src='"+beiyong5+"' style='display:inline;width:40px;height:40px;'/></dd></dl></div><h2>"+goodsName+"</h2><h3 class='red'>"+goodsDesc+"</h3><dd class='mod-price'><span>￥</span><span class='vm-price'>"+goodsPrice+"</span><span class='vm-start'>起</span></dd></div></li>";
+			//let str2="<li class='gl-item'><a href='shangpinxiangqing.html'><div class='gl-item-wrap'><div class='mod-pic' id='box'><img src='images/kk1.jpg' id='bb1' style='display:inline;width:220px;height:220px;'/><img src='images/kk2.jpg' id='bb2' style='display:inline;width:220px;height:220px;'/><img src='images/kk3.jpg' id='bb3' style='display:inline;width:220px;height:220px;'/><img src='images/kk4.jpg' id='bb3' style='display:inline;width:220px;height:220px;'/></div><div class='itme-slide'><dl id='ul' style='display:block;'><dd><img src='images/kk1-1.jpg' style='display:inline;width:40px;height:40px;'/></dd><dd><img src='images/kk2-2.jpg' style='display:inline;width:40px;height:40px;'/></dd><dd class='active'><img src='images/kk3-3.jpg' style='display:inline;width:40px;height:40px;'/></dd><dd class='active'><img src='images/kk4-4.jpg' style='display:inline;width:40px;height:40px;'/></dd></dl></div><h2>魅蓝 Note5</h2><h3 class='red'>【6期免息】6月1日起直降100元，只需899元。</h3><dd class='mod-price'><span>￥</span><span class='vm-price'>899</span><span class='vm-start'>起</span></dd></div></a></li>";
+			//let str1="<li class='gl-item'><a href='#'><div class='gl-item-wrap'><div class='mod-pic' id='box'><img src='images/aa1.jpg' id='bb1' style='display:inline;width:220px;height:220px;'/><img src='images/aa2.jpg' id='bb2' style='display:inline;width:220px;height:220px;'/><div class='itme-slide'><dl id='ul' style='display:block;width:150px;left:50px;'><dd><img src='images/aa1-1.jpg' style='display:inline;width:40px;height:40px;'/></dd><dd><img src='images/aa2-2.jpg' style='display:inline;width:40px;height:40px;'/></dd></dl></div><h2>魅蓝 Mx6</h2><h3 class='red'>【顺丰包邮】购机赠标准板移动电源，6期免息。</h3><dd class='mod-price'><span>￥</span><span class='vm-price'>1599</span><span class='vm-start'>起</span></dd></div></a></li>";
 			$(".gooods-list-wrap").append(str);
+			//$(".gooods-list-wrap").append(str2);
+			//$(".gooods-list-wrap").append(str1);
 		}
+		//自动跳转到商品详情页
+				var liGoods = document.getElementById("mains").getElementsByTagName("li");
+				var number;
+				for(var k=0;k<liGoods.length;k++){
+					(function(k){
+						liGoods[k].onclick = function(){
+							number = liGoods[k].getAttribute("ord");
+							saveCookie("number",number,7);
+							location.href="shangpinxiangqing.html";
+						}
+					})(k);
+				}
+		
 		}
 	});
+	
+
 });
 
 </script>
 
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

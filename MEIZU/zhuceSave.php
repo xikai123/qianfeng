@@ -28,9 +28,9 @@
 //			sleep(2);
 //		   location.href="denglu.html";
 			//header('Location: denglu.html');
-			echo "注册成功";	
+			echo "1";	//注册成功
 		}else{
-			echo "注册失败";
+			echo "0";
 		}
 	}	
 ?>

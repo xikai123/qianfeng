@@ -1025,6 +1025,43 @@ $(function(){
 		$("#num").html(sum);
 	});	
 });	
+
+
+//自动获取详情页
+	let goodsId=getCookie("number");
+	jQuery.ajax({
+		type:"get",
+		url:"php/getGoodsInfo.php",
+		async:true,
+		data:"goodsId="+goodsId,
+		success:function(data){
+			//console.log(1);
+				let obj=eval('('+data+')');
+				console.log(obj)
+				let goodsPrice=obj.goodsPrice;
+				let goodsName=obj.goodsName;
+				var goodsImg=obj.goodsImg;
+				let goodsDesc=obj.goodsDesc;
+				let beiyong1=obj.beiyong1;
+				let beiyong2=obj.beiyong2;
+				let beiyong3=obj.beiyong3;
+				let beiyong4=obj.beiyong4;
+				let beiyong5=obj.beiyong5;
+				let beiyong6=obj.beiyong6;
+				let beiyong7=obj.beiyong7;
+				jQuery(".goodsN").html(goodsName);
+				jQuery(".redT").html(goodsDesc);
+				jQuery(".p").html(beiyong1);
+				jQuery(".b").html(goodsPrice);
+				jQuery(".jifen").html("可获取积分："+goodsPrice);
+				jQuery(".p11").attr({src:goodsImg});
+				jQuery(".p1").attr({src:beiyong3});
+				jQuery(".p2").attr({src:beiyong4});
+				jQuery(".p3").attr({src:beiyong5});
+				jQuery(".p4").attr({src:beiyong6});
+				jQuery(".p5").attr({src:beiyong7});
+		}  
+	}); 
 </script>
 
 
