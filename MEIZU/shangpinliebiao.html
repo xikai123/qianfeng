@@ -1265,7 +1265,8 @@ $(function(){
 		type:"get",
 		success:function(data){
 		var obj=eval(data);
-		for(i=0;i<16;i++){
+		for(i=0;i<obj.length;i++){
+			//var goodsId=obj[i].goodsId;
 			let goodsId=obj[i].goodsId;//编号
 			let goodsName=obj[i].goodsName;//名称
 			let goodsType=obj[i].goodsType;//类型
@@ -1286,18 +1287,25 @@ $(function(){
 			//$(".gooods-list-wrap").append(str2);
 			//$(".gooods-list-wrap").append(str1);
 		}
-		//自动跳转到商品详情页
+		//自动跳转到商品详情页（可用）
 				var liGoods = document.getElementById("mains").getElementsByTagName("li");
 				var number;
 				for(var k=0;k<liGoods.length;k++){
 					(function(k){
 						liGoods[k].onclick = function(){
 							number = liGoods[k].getAttribute("ord");
-							saveCookie("number",number,7);
+						    saveCookie("number",number,7);
 							location.href="shangpinxiangqing.html";
 						}
 					})(k);
 				}
+       //jQuery自动跳转到商品详情页（可用）
+//		$("#mains li").on("click",function(){
+//			let number = $(this).attr("ord");
+//			saveCookie("number",number,7);
+//			location.href="shangpinxiangqing.html";
+//		});
+		
 		
 		}
 	});

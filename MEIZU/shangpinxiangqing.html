@@ -6,7 +6,7 @@
 		<link href="css/public.css" rel="stylesheet" type="text/css">
 		<link href="css/xiangqing.css" rel="stylesheet" type="text/css">
 	    <script type="text/javascript" src="js/xuanxiangka.js"></script>
-	    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	    <script type="text/javascript" src="js/jquery.js" ></script>
 	</head>
 	<body>
 	<!--顶部-->
@@ -407,7 +407,7 @@
     			<a href="index.html" class="shou-a1">首页</a>
     			>
     			<span class="shou-r">
-    				<a href="#"><i>魅蓝 Note5</i></a>
+    				<a href="#"><i class="shoujimingzi">魅蓝 Note5</i></a>
     			</span>
     		</section>
        	</div>
@@ -419,20 +419,19 @@
 					<img class="datu" src="images/xq4.jpg" />					
 				</div>
 				<ul id="xltid">
-					<li><img class="xiaotu" src="images/xq4.jpg"/></li>
-					<li><img class="xiaotu" src="images/lala2.jpg" /></li>
-					<li><img class="xiaotu" src="images/lala3.jpg" /></li>
-					<li><img class="xiaotu" src="images/lala4.jpg" /></li>
+					<li class="bei1"><img class="xiaotu" src="images/xq4.jpg"/></li>
+					<li class="bei2"><img class="xiaotu" src="images/lala2.jpg" /></li>
+					<li class="bei6"><img class="xiaotu" src="images/lala3.jpg" /></li>
+					<li class="bei7"><img class="xiaotu" src="images/lala4.jpg" /></li>
 				</ul>
 				
 			</section>
-			
 			<section class="property-r">
 				<h2 class="shoujiming">魅蓝 Note5</h2>
 				<p class="sanse">【6期免息】7月1日起，64G版赠EP-31耳机及高透膜</p>
 				<div class="jiage">
 					<span>价格：</span>
-					<b>￥899.00</b>
+					<b class="b-c" id="jiaojiao">899.00</b>
 				</div>
 				<div class="banben">
 					<span>版本：</span>
@@ -446,16 +445,16 @@
 				<div class="yanse">
 					<i>颜色分类：</i>
 					<a href="javascript:;" class="jin">
-						<img src="images/jinse.png"/>
+						<img class="bh1" src="images/jinse.png"/>
 						<span>香槟金</span>
 					</a>
 					<a href="javascript:;" class="yin">
-						<img src="images/xq2.jpg"/>
+						<img  class="bh2" src="images/xq2.jpg"/>
 						<span>月光银</span>
 					</a>
 					<!--<a href="javascript:;" class="hei last">-->
 					<a href="javascript:;" class="lan">
-						<img src="images/lanse.png"/>
+						<img class="bh3" src="images/lanse.png"/>
 						<span>冰川蓝</span>
 					</a>
 				</div>
@@ -966,7 +965,7 @@
                                 <a href="#"><i></i>现在购买</a>
                             </div>
                             <div class="mod-tot">
-                            魅蓝 Note5<em>￥1099.00</em>
+                            	<i class="yekai">魅蓝 Note5</i><em class="kaiye">￥1099.00</em>
                                 <p>全网通公开版 冰川蓝 32GB</p>
                             </div>
                 </div>
@@ -977,7 +976,9 @@
 
 	</body>
 </html>
-<script type="text/javascript" src="js/jquery.js" ></script>
+
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/cookieTools1702.js" ></script>
 <script type="text/javascript">
 //滚动条事件
 	window.onscroll = function(){
@@ -1025,23 +1026,21 @@ $(function(){
 		$("#num").html(sum);
 	});	
 });	
-
-
 //自动获取详情页
 	let goodsId=getCookie("number");
 	jQuery.ajax({
 		type:"get",
-		url:"php/getGoodsInfo.php",
+		url:"getGoodsInfo.php",
 		async:true,
 		data:"goodsId="+goodsId,
 		success:function(data){
 			//console.log(1);
-				let obj=eval('('+data+')');
-				console.log(obj)
-				let goodsPrice=obj.goodsPrice;
-				let goodsName=obj.goodsName;
+                let obj=eval('('+data+')');
+				//console.log(obj)
+				let goodsPrice=obj.goodsPrice;//价格
+			    let goodsName=obj.goodsName;//名称
 				var goodsImg=obj.goodsImg;
-				let goodsDesc=obj.goodsDesc;
+				let goodsDesc=obj.goodsDesc;//描述
 				let beiyong1=obj.beiyong1;
 				let beiyong2=obj.beiyong2;
 				let beiyong3=obj.beiyong3;
@@ -1049,19 +1048,36 @@ $(function(){
 				let beiyong5=obj.beiyong5;
 				let beiyong6=obj.beiyong6;
 				let beiyong7=obj.beiyong7;
-				jQuery(".goodsN").html(goodsName);
-				jQuery(".redT").html(goodsDesc);
-				jQuery(".p").html(beiyong1);
-				jQuery(".b").html(goodsPrice);
-				jQuery(".jifen").html("可获取积分："+goodsPrice);
-				jQuery(".p11").attr({src:goodsImg});
-				jQuery(".p1").attr({src:beiyong3});
-				jQuery(".p2").attr({src:beiyong4});
-				jQuery(".p3").attr({src:beiyong5});
-				jQuery(".p4").attr({src:beiyong6});
-				jQuery(".p5").attr({src:beiyong7});
+   			    jQuery(".shoujiming").html(goodsName);//名称
+   			    jQuery(".shoujimingzi").html(goodsName);//名称
+   			    jQuery(".yekai").html(goodsName);//名称
+				jQuery(".sanse").html(goodsDesc);//描述
+				jQuery(".b-c").html("￥"+goodsPrice);//价格
+				jQuery(".kaiye").html("￥"+goodsPrice);//价格
+				jQuery(".datu").attr({src:goodsImg});//大图
+				//小图
+				jQuery(".bh1").attr({src:beiyong3});
+				jQuery(".bh2").attr({src:beiyong4});
+				jQuery(".bh3").attr({src:beiyong5});
+				//大图下的小图
+				jQuery(".bei1 img").attr({src:goodsImg});
+				jQuery(".bei2 img").attr({src:beiyong1});
+				jQuery(".bei6 img").attr({src:beiyong2});
+				jQuery(".bei7 img").attr({src:beiyong3});
+				
 		}  
 	}); 
+//var goodsId=getCookie("goodsId");
+//	var userName=getCookie("userName");
+//	//console.log(userName);
+//	jQuery.get("getGoodsInfo.php",{goodsId:goodsId},function(data){
+//		var arr=eval("("+data+")");
+//		jQuery(".shoujiming").html(arr.goodsName);
+//		jQuery(".sanse").html(arr.goodsDesc);
+//		jQuery(".datu").attr("src",arr.goodsImg);
+//		jQuery(".jiage b").html("￥"+arr.goodsPrice);
+//		
+//	});
 </script>
 
 
