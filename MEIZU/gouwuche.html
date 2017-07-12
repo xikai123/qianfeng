@@ -93,7 +93,7 @@
 									</td>
 									<td class="yunsuan clear">
 		                            	<input type="button" value="-"/>
-		                                <input type="text"/>
+		                                <input type="text" value="1"/>
 		                                <input type="button" value="+"/>
                                     </td>
                                     <td class="td-td4">
@@ -257,3 +257,25 @@
 
 	</body>
 </html>
+<script type="text/javascript">
+jQuery.ajax({	
+	type:"get",
+	data:{'vipName':vipName},
+	url:"php/getShoppingCart.php",
+	async:true,
+	success:function(data){
+//console.log(data);
+		var obj = eval('('+data+')');
+		
+		for(var i=0;i<obj.length;i++){
+			//console.log("s="+obj[i].goodsName);
+			
+			var str = "<ul class='clear' ord='"+obj[i].goodsId+"'><li><input type='checkbox' /></li><li><a href='#'><img id='img' src='"+obj[i].goodsImg+"' /> </a></li><li><a href='#'><p>"+obj[i].goodsName+"</p><i>颜色：枪色</i><i>屏幕尺寸："+obj[i].beiyong8+"</i></a></li><li><span>"+obj[i].goodsPrice+".00元</span></li><li><span class='jian'>-</span><b class='num'>1</b><span class='jia'>+</span></li><li><span class='xiaoJi'>4199.00元</span><s>5499.00元</s></li><li><a href='#'><img src='img/star.png' /></a><a class='removes' href='javascript:;'><img class='removeGoods' src='img/dustbin.png'/></a></li></ul>";
+			
+//			saveCookie("goodsId",goodsId,7)
+			jQuery("#buyGoods").append(str);
+		}
+
+	
+	
+</script>

@@ -5,8 +5,8 @@
 		<title>手机商品详情</title>
 		<link href="css/public.css" rel="stylesheet" type="text/css">
 		<link href="css/xiangqing.css" rel="stylesheet" type="text/css">
-	    <script type="text/javascript" src="js/xuanxiangka.js"></script>
-	    <script type="text/javascript" src="js/jquery.js" ></script>
+	   <!-- <script type="text/javascript" src="js/xuanxiangka.js"></script>-->
+	   <!-- <script type="text/javascript" src="js/jquery.js" ></script>-->
 	</head>
 	<body>
 	<!--顶部-->
@@ -497,13 +497,13 @@
 					</div>
 				</div>
 				<div class="goumai">
-					<i>数量：</i>
-					<div id="num">1</div>
+					<i >数量：</i>
+					<div id="num" class="shuliang"><p id="jkjkjkjk">1</p></div>
 					<div class="jisuan">
 						<a href="javascript:;" id="jia">+</a>
 						<a href="javascript:;" id="jian">-</a>
 					</div>
-					<span  id="lijigoumai">立即购买</span>
+					<input type="button" value="立即购买" id="lijigoumai" onclick="add_cart()"/>
 				</div>
 			</section>
 		</section>
@@ -977,8 +977,107 @@
 	</body>
 </html>
 
-<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/cookieTools1702.js" ></script>
+<script type="text/javascript">
+//function add_cart(){
+//	var userName = getCookie("userName");
+//	var goodsId = getCookie("number");
+//	var goodsCount = parseInt($(".shuliang").html());
+//	if(goodsCount <= 0){
+//		alert('请选择商品数量！');
+//		return false;
+//	}	
+//	$.ajax({
+//		type: "get",
+//		url: "addShoppingCart.php",
+//		data:{
+//			userName:userName,
+//			goodsId:goodsId,
+//			goodsCount:goodsCount
+//		},
+//		success:function(data){
+//			console.log(data);
+//			location.href="gouwuche.html";
+//		}
+//	})	
+//
+//};
+
+//方法二
+//jQuery("#lijigoumai").click(function(){	
+//	let vipName=getCookie("userName");
+//	let goodsCount="1";
+//	let goodsId=getCookie("number");
+//		//console.log(goodsId+"asdfasdfasdf");
+//	jQuery.ajax({
+//		type:"get",
+//		url:"addShoppingCart.php",
+//		async:true,
+//		data:{
+//			vipName:vipName,
+//			goodsId:goodsId,
+//			goodsCount:goodsCount
+//		},
+//		success:function(data){
+//			//console.log(data);
+//			//let obj=eval('('+data+')');
+////			if(data=="1"){
+//				
+//				location.href = "gouwuche.html";
+////			}
+//		}
+//	})
+//});
+//方法三
+function add_cart(){
+	var userName = getCookie("userName");
+	var goodsId = getCookie("number");
+	var goodsCount = parseInt($("#jkjkjkjk").html());
+	if(goodsCount <= 0){
+		alert('请选择商品数量！');
+		return false;
+	}
+	var data = {
+		userName:userName,
+		goodsId:goodsId,
+		goodsCount:goodsCount
+	};
+	jQuery.ajax({
+		url:"addShoppingCart.php",
+		type:"get",
+		data:data,
+		success:function(data){
+			console.log(data);
+			if(userName!=""){
+				alert('添加购物车成功！');
+				location.href="gouwuche.html";
+			}else{
+				alert('添加购物车失败,您还未登录！');
+			}
+		}
+	});
+}
+
+
+
+$("#jia").click(function(){
+		var num=$("#num").html();
+		num++;
+		if(num>=5){
+			num=5;
+		}
+		$("#num").html(num);
+	});
+	$("#jian").click(function(){
+		var sum=$("#num").html();
+		sum--;
+		if(sum<=1){
+			sum=1;
+		}
+		$("#num").html(sum);
+	});	
+</Script>
 <script type="text/javascript">
 //滚动条事件
 	window.onscroll = function(){
@@ -1009,26 +1108,13 @@ $(function(){
 	});
 	
 	
-	$("#jia").click(function(){
-		var num=$("#num").html();
-		num++;
-		if(num>=5){
-			num=5;
-		}
-		$("#num").html(num);
-	});
-	$("#jian").click(function(){
-		var sum=$("#num").html();
-		sum--;
-		if(sum<=1){
-			sum=1;
-		}
-		$("#num").html(sum);
-	});	
-});	
-//自动获取详情页
+	
+	
+	
+	
+	//自动获取详情页
 	let goodsId=getCookie("number");
-	jQuery.ajax({
+	$.ajax({
 		type:"get",
 		url:"getGoodsInfo.php",
 		async:true,
@@ -1048,37 +1134,28 @@ $(function(){
 				let beiyong5=obj.beiyong5;
 				let beiyong6=obj.beiyong6;
 				let beiyong7=obj.beiyong7;
-   			    jQuery(".shoujiming").html(goodsName);//名称
-   			    jQuery(".shoujimingzi").html(goodsName);//名称
-   			    jQuery(".yekai").html(goodsName);//名称
-				jQuery(".sanse").html(goodsDesc);//描述
-				jQuery(".b-c").html("￥"+goodsPrice);//价格
-				jQuery(".kaiye").html("￥"+goodsPrice);//价格
-				jQuery(".datu").attr({src:goodsImg});//大图
+   			    $(".shoujiming").html(goodsName);//名称
+   			    $(".shoujimingzi").html(goodsName);//名称
+   			    $(".yekai").html(goodsName);//名称
+				$(".sanse").html(goodsDesc);//描述
+				$(".b-c").html("￥"+goodsPrice);//价格
+				$(".kaiye").html("￥"+goodsPrice);//价格
+				$(".datu").attr({src:goodsImg});//大图
 				//小图
-				jQuery(".bh1").attr({src:beiyong3});
-				jQuery(".bh2").attr({src:beiyong4});
-				jQuery(".bh3").attr({src:beiyong5});
+				$(".bh1").attr({src:beiyong3});
+				$(".bh2").attr({src:beiyong4});
+				$(".bh3").attr({src:beiyong5});
 				//大图下的小图
-				jQuery(".bei1 img").attr({src:goodsImg});
-				jQuery(".bei2 img").attr({src:beiyong1});
-				jQuery(".bei6 img").attr({src:beiyong2});
-				jQuery(".bei7 img").attr({src:beiyong3});
-				
-		}  
+				$(".bei1 img").attr({src:goodsImg});
+				$(".bei2 img").attr({src:beiyong1});
+				$(".bei6 img").attr({src:beiyong2});
+				$(".bei7 img").attr({src:beiyong3});
+		} 
+		
 	}); 
-//var goodsId=getCookie("goodsId");
-//	var userName=getCookie("userName");
-//	//console.log(userName);
-//	jQuery.get("getGoodsInfo.php",{goodsId:goodsId},function(data){
-//		var arr=eval("("+data+")");
-//		jQuery(".shoujiming").html(arr.goodsName);
-//		jQuery(".sanse").html(arr.goodsDesc);
-//		jQuery(".datu").attr("src",arr.goodsImg);
-//		jQuery(".jiage b").html("￥"+arr.goodsPrice);
-//		
-//	});
-</script>
-
-
 	
+	
+	
+	
+});	
+</script>
